@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  
+  <body>
+    <div class="container">
+      <div class="header">
+        <img id="logo" src="./img/logo projeto integrador.png" alt="Logo">
+        <span>DirectCar</span>
+        <button onclick="openModal()" id="new">Adicionar</button>
+      </div>
+
+      <div class="divTable">
+        <table>
+          <thead>
+            <tr>
+              <th>Imagem</th>
+              <th>Modelo</th>
+              <th>Ano</th>
+              <th>Preço</th>
+              <th>Cor</th>
+              <th>Placa</th>
+              <th class="acao" >Editar</th>
+              <th class="acao" onclick="confirmarExclusao(2)">Excluir</th>
+            </tr>
+          </thead>
+<!-- Se retirar para de funcionar --> <tbody></tbody>  
+        </table>
+      </div>
+
+      <div class="modal-container">
+        <div class="modal">
+          <form>
+            <label for="m-img">Coloque a imagem aqui</label>
+            <input id="m-img" type="file"  accept="image/*" required />
+  
+            <label for="m-modelo">Modelo</label>
+            <input id="m-modelo" type="text" maxlength="30"required />
+
+            <label for="m-ano">Ano</label>
+            <input id="m-ano" type="text" placeholder="2024" maxlength="4" required />
+            
+            <label for="m-preco">Preço</label>
+            <input id="m-preco" type="text" placeholder="0000,00"  oninput="virgula(event)" required />
+
+            <label for="m-cor">Cor</label>
+            <input id="m-cor" type="text" placeholder="vermelho"  maxlength="11"  required />
+
+            <label for="m-placa">Placa</label>
+            <input id="m-placa" type="text" placeholder="AAA-0000" oninput="formatarPlaca(event)" required />
+
+            <button id="btnSalvar">Salvar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
